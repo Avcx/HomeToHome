@@ -1,0 +1,264 @@
+html
+{
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
+}
+
+*,
+*::before,
+*::after
+{
+  box-sizing: inherit;
+  padding: 0;
+  margin: 0;
+}
+
+html,
+body
+{
+  height: 100%;
+}
+
+img
+{
+  max-width: 100%;
+}
+
+/*
+  Text
+==============================*/
+
+.text
+{
+  line-height: 1.6rem;
+  color: #fff;
+}
+
+.text-container
+{
+  background-color: #888;
+  padding:  50px 80px;
+  position: relative;
+}
+
+span
+{
+  line-height: 2em;
+}
+
+/*
+  Parallax
+==============================*/
+
+.img1
+{
+  background-image: url('img/moving-truck.png');
+}
+
+.img2
+{
+  background-image: url('img/moving.jpg');
+}
+
+.parallax
+{
+  min-height: 60vh;
+  height: 100%;
+  position: relative;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.caption {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    width: 100%;
+    text-align: center;
+    color: #000;
+    margin: 1rem 0;
+}
+
+.caption span.border
+{
+    background-color: #4d7de1;
+    color: #fff;
+    padding: 1rem;
+    font-size: 25px;
+}
+
+.caption + .text
+{
+  margin-top: 3rem;
+}
+
+/*
+  Top bar
+==============================*/
+.menu-button
+{
+  position: absolute;
+  right: 0;
+  top: 0;
+  padding: 1rem;
+  background: transparent;
+  color: white;
+  border: 0;
+  cursor: pointer;
+}
+
+.head-wrap
+{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: rgba(110, 110, 110, 0.8);
+  padding: 1rem;
+  z-index: 1000;
+}
+
+
+.heading
+{
+  text-shadow: 0px 2px 2px rgba(0, 0, 0, 0.6);
+  letter-spacing: 0.1rem;
+  color: white;
+  text-align: left;
+  font-family: 'Black Ops One', cursive;
+  width: auto;
+  max-width: 100%;
+  font-size: 0.75rem;
+}
+
+/*
+  Navigation
+==============================*/
+
+.main-nav ul
+{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  margin: 1rem 0;
+  list-style-type: none;
+  justify-content: flex-end;
+  flex-direction: column;
+  font-weight: 700;
+}
+
+.main-nav li
+{
+  width: 100%;
+  display: block;
+}
+
+.main-nav a
+{
+  font-size: 1.3rem;
+  font-weight: 700;
+  display: block;
+  text-decoration: none;
+  color: #fff;
+  padding: 0.5rem;
+  width: 100%;
+  text-align: center;
+}
+
+.main-nav .selected a
+{
+  border-bottom: 3px solid #fff;
+  pointer-events: none;
+}
+
+@media (max-width: 400px)
+{
+  .menu-button
+  {
+    height: 50px;
+    width: 50px;
+  }
+  h1
+  {
+    width: 70%;
+  }
+}
+
+@media (max-width: 599px)
+{
+  .main-nav li:not(:last-child)
+  {
+    margin-bottom: 3rem;
+  }
+  .nav-container.open
+  {
+    display: block;
+    height: 100vh;
+  }
+  .nav-container
+  {
+    display: none;
+  }
+  .text-container
+  {
+    background-color: #888;
+    padding:  15px 21px;
+  }
+}
+
+@media (min-width: 600px)
+{
+  .heading
+  {
+    font-size: 1rem;
+  }
+  .main-nav ul
+  {
+    flex-direction: row;
+    font-size: 1.25rem;
+  }
+  .menu-button
+  {
+    display: none;
+  }
+
+  .main-nav li:not(:last-child)
+  {
+    margin-right: 1rem;
+  }
+  .parallax
+  {
+    min-height: 95vh;
+  }
+
+}
+
+@media (min-width: 900px)
+{
+  .main-nav a
+  {
+    font-size: 1rem;
+  }
+  .nav-container
+  {
+    width: 40%;
+    max-width: 500px;
+  }
+  .heading
+  {
+    display: inline-flex;
+    width: 60%;
+    align-items: center;
+    margin-left: 2rem;
+  }
+  .head-wrap
+  {
+    display: flex;
+  }
+  span
+  {
+    line-height: 1em;
+  }
+}
