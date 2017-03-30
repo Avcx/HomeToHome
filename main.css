@@ -39,9 +39,10 @@ img
   background-color: #888;
   padding:  50px 80px;
   position: relative;
+  min-height: 100vh;
 }
 
-span
+.caption span
 {
   line-height: 2em;
 }
@@ -62,7 +63,7 @@ span
 
 .parallax
 {
-  min-height: 60vh;
+  min-height: 500px;
   height: 100%;
   position: relative;
   background-attachment: fixed;
@@ -71,7 +72,17 @@ span
   background-position: center;
 }
 
-.caption {
+span.arrow
+{
+  bottom: 1rem;
+  left:0;
+  position: absolute;
+  width:100%;
+  text-align: center;
+}
+
+.caption
+{
     position: absolute;
     left: 0;
     top: 50%;
@@ -86,12 +97,20 @@ span
     background-color: #4d7de1;
     color: #fff;
     padding: 1rem;
-    font-size: 25px;
+    font-size: 1.4em;
 }
 
-.caption + .text
+.arrow img
 {
-  margin-top: 3rem;
+    border-radius: 100%;
+    cursor: pointer;
+    background-color: #888;
+}
+
+.arrow img:hover
+{
+    background-color: #4d7de1;
+    transform: scale(1.1);
 }
 
 /*
@@ -118,19 +137,20 @@ span
   background: rgba(110, 110, 110, 0.8);
   padding: 1rem;
   z-index: 1000;
+  box-shadow: 0 0 2px rgba(0, 0, 0, 0.6);
 }
 
 
 .heading
 {
-  text-shadow: 0px 2px 2px rgba(0, 0, 0, 0.6);
+  text-shadow: 0 2px 2px rgba(0, 0, 0, 0.6);
   letter-spacing: 0.1rem;
   color: white;
   text-align: left;
   font-family: 'Black Ops One', cursive;
   width: auto;
   max-width: 100%;
-  font-size: 0.75rem;
+  font-size: 0.5em;
 }
 
 /*
@@ -147,30 +167,44 @@ span
   justify-content: flex-end;
   flex-direction: column;
   font-weight: 700;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-.main-nav li
+.main-nav li,
+.main-nav a
 {
   width: 100%;
   display: block;
+}
+
+.main-nav a,
+.main-nav span
+{
+  font-weight: 700;
+  text-decoration: none;
+  color: #fff;
+  padding: 0.5rem;
+}
+
+.main-nav #menu-title
+{
+  margin-top: 2rem;
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+  font-size: 1.7em;
+  border-bottom: 1px solid white;
+}
+
+.nav-list-item
+{
+  /*border: 1px solid white;*/
 }
 
 .main-nav a
 {
-  font-size: 1.3rem;
-  font-weight: 700;
-  display: block;
-  text-decoration: none;
-  color: #fff;
-  padding: 0.5rem;
-  width: 100%;
+  font-size: 1.3em;
   text-align: center;
-}
-
-.main-nav .selected a
-{
-  border-bottom: 3px solid #fff;
-  pointer-events: none;
 }
 
 @media (max-width: 400px)
@@ -182,7 +216,7 @@ span
   }
   h1
   {
-    width: 70%;
+    width: 90%;
   }
 }
 
@@ -206,6 +240,14 @@ span
     background-color: #888;
     padding:  15px 21px;
   }
+  .arrow
+  {
+    display: none;
+  }
+  .parallax
+  {
+    background-attachment: scroll;
+  }
 }
 
 @media (min-width: 600px)
@@ -217,11 +259,22 @@ span
   .main-nav ul
   {
     flex-direction: row;
-    font-size: 1.25rem;
+    font-size: 1rem;
+    max-width: 650px;
   }
   .menu-button
   {
     display: none;
+  }
+
+  .caption span.border
+  {
+    font-size: 1.5em;
+  }
+
+  .main-nav li
+  {
+    border-radius: 5px;
   }
 
   .main-nav li:not(:last-child)
@@ -233,9 +286,25 @@ span
     min-height: 95vh;
   }
 
+  .main-nav .selected a
+  {
+    border-bottom: 2px solid #fff;
+    pointer-events: none;
+  }
+
+  .main-nav #menu-title
+  {
+    display: none;
+  }
+
+  .parallax
+  {
+    background-position: right center;
+  }
+
 }
 
-@media (min-width: 900px)
+@media (min-width: 1070px)
 {
   .main-nav a
   {
@@ -260,5 +329,15 @@ span
   span
   {
     line-height: 1em;
+  }
+
+  .main-nav .selected a
+  {
+    border-bottom: 3px solid #fff;
+  }
+  .main-nav li:hover:not(.selected)
+  {
+    transform: scale(1.1);
+    background-color: #4d7de1;
   }
 }

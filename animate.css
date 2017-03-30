@@ -1,0 +1,9 @@
+.head-wrap
+{
+  transition: transform 0.75s;
+}
+
+.main-nav li {
+  transition: transform 3s;
+  transition: background-color 0.5s;
+}
