@@ -267,6 +267,11 @@ wrapper
   line-height: 1.75em;
   padding: 6em 0em 4em 0em;
   }
+
+.wrapper .box {
+  max-width: 90%;
+  margin: 0 auto;
+  }
 .theme-1
 {
  background-color: #01BAEF;
@@ -294,11 +299,7 @@ color: #fff
 
 @media screen and (max-width: 1240px) {
   .wrapper {
-    padding: 6em 0em 4em 0em;
-  }
-  .wrapper .box {
-    max-width: 1000px;
-    margin: 0 auto;
+    padding: 6em 0.5em 4em 0.5em;
   }
 }
 
@@ -317,12 +318,17 @@ color: #fff
   .more {
     display: none;
   }
+
+  body{
+    font-size: 1.1em;
+  }
+
   #parallax {
     padding: 5em 1em 3em 1em;
     height: auto;
     min-height: 0;
   }
   .wrapper {
-    padding: 3em 2em 1em 2em;
+    padding: 2em 1em 0.5em 1em;
   }
 }
