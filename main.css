@@ -1,7 +1,7 @@
 html
 {
   box-sizing: border-box;
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Open Sans', sans-serif;
 }
 
 body {
@@ -27,6 +27,10 @@ img
 
 p {
   margin-bottom: 2em;
+}
+
+ul, ol{
+  list-style: none;
 }
 
 body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
@@ -201,7 +205,7 @@ Parallax
   background-origin: center;
   background-size: cover;
   height: 100vh;
-  min-height: 35em;
+  min-height: 30em;
   justify-content: center;
   flex-direction: column;
   position: relative;
@@ -225,7 +229,7 @@ Parallax
     bottom: 0;
     color: inherit;
     font-size: 0.8em;
-    height: 8.5em;
+    height: 4.5em;
     left: 50%;
     margin-left: -8em;
     opacity: 1;
@@ -243,7 +247,7 @@ Parallax
     background-position: center;
     background-repeat: no-repeat;
     background-size: contain;
-    bottom: 4em;
+    bottom: 1em;
     content: '';
     display: block;
     height: 1.5em;
@@ -272,10 +276,59 @@ wrapper
   max-width: 90%;
   margin: 0 auto;
   }
+
+.wrapper .box span,
+.wrapper .box p,
+.wrapper .box h3 {
+    color: rgba(0, 50, 50, 0.8);
+  }
+
+/*
+  components
+*/
+
+.list {
+  list-style: initial;
+}
+
+.grid-view {
+  padding: 0;
+  margin: 0;
+    display: -moz-flex;
+    display: -webkit-flex;
+    display: -ms-flex;
+    display: flex;
+    -moz-flex-wrap: wrap;
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -moz-justify-content: center;
+    -webkit-justify-content: center;
+    -ms-justify-content: center;
+    justify-content: center;
+    list-style: none;
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+    max-height: 1000px;
+}
+
+.grid-view>li {
+    padding: 3em 3em 2em 5em;
+    display: block;
+    position: relative;
+    text-align: left;
+    width: 50%;
+}
+
+/*
+  Color Schemes
+*/
+
 .theme-1
 {
  background-color: #01BAEF;
- color: #202030;
+ color: #fff;
 }
 
 .theme-2
@@ -290,6 +343,44 @@ background-color: #874000;
 color: #fff
 }
 
+/*
+  Icon
+*/
+
+.icon {
+  font: normal normal normal 32px/1 FontAwesome;
+  font-size: inherit;
+  line-height: 1.25em;
+}
+
+.icon::before {
+  position: absolute;
+  top: 1.5em;
+  left: 1em;
+  font-size: 2em;
+}
+
+.icon h3,
+.icon span {
+  font-family: "Roboto", sans-serif;
+}
+
+.grid-view>li:nth-child(1) {
+  background-color: rgba(0,0,0,0.1);
+}
+
+.grid-view>li:nth-child(2) {
+  background-color: rgba(0,0,0,0.125);
+}
+
+.grid-view>li:nth-child(3) {
+  background-color: rgba(0,0,0,0.15);
+}
+
+.grid-view>li:nth-child(4) {
+  background-color: rgba(0,0,0,0.175);
+}
+
 @media screen and (min-width: 1000px) {
 
   #parallax
@@ -301,6 +392,9 @@ color: #fff
   .wrapper {
     padding: 6em 0.5em 4em 0.5em;
   }
+  .grid-view>li {
+    padding: 4em 4em 2em 6em;
+  }
 }
 
 }
@@ -309,14 +403,45 @@ color: #fff
     font-size: 1.3em;
   }
   .wrapper {
-      padding: 4em 3em 2em 3em;
+      padding: 3em 2em;
   }
+}
+
+@media screen and (max-width: 900px) {
+
+  .wrapper {
+      padding: 2em 1em;
+  }
+
+    .icon::before {
+    position: static;
+    text-align: center;
+    display: block;
+    margin-bottom: 0.5em;
+    font-size: 2em;
+  }
+
+  .grid-view>li {
+    padding: 3em 2em;
+}
+
 }
 
 @media screen and (max-width: 768px) {
   #header nav a span,
   .more {
     display: none;
+  }
+
+  .grid-view>li {
+    padding: 3em 2em;
+    text-align: center;
+    width: 100%;
+    background-color: transparent !important;;
+  }
+
+  .grid-view>li:not(:last-child) {
+    border-bottom: 2px rgba(0,0,0,0.6) solid;
   }
 
   body{
@@ -329,6 +454,6 @@ color: #fff
     min-height: 0;
   }
   .wrapper {
-    padding: 2em 1em 0.5em 1em;
+    padding: 3em 2em 2em 2em;
   }
 }
