@@ -26,7 +26,7 @@
   
   <body>
     <div id="page-wrapper">
-      <header id="header" class="hide">
+      <header class="header" id="main-header">
         <h1><a>Home to Home Moving Calgary</a></h1>
         <nav>
           <div>
@@ -38,16 +38,15 @@
       </header>
       <section id="parallax">
         <div class="box">
-          <h2> 
-            <img src="img/HometoHomeLogo-662x300.png" alt="HomeToHomeLogo" width="662" height="300">
-            <br> <span class="blue-bg">Home to Home Moving</span></h2>
+           <img id="parallax-logo" class="pop" src="img/HometoHomeLogo-662x300.png" alt="HomeToHomeLogo" width="662" height="300">
+          <h2 id="parallax-heading" class="pop" role="heading"> Home to Home Moving</h2>
           <p> </p>
-          <p><span>Family owned and Operated</span></p>
+          <p id="parallax-subheading" class="pop">Family owned and Operated</p>
           <ul class="btn-group">
-            <li><a href="#" class="btn primary">Get Free Quote!</a></li>
+            <li><a href="#" id="call-to-action" class="pop btn primary" role="button">Get Free Quote!</a></li>
             </ul>
         </div>
-        <a href="#info" class="more">Learn More</a>
+        <a href="#info" class="more">Scroll Down</a>
       </section>
       <section id="info" class="wrapper theme-1">
         <div class="box">
@@ -61,14 +60,14 @@
             <li class="icon fa-truck bg2">
               <h3>Moving</h3>
               <span>We take pride in caring for your belongings. 
-                Innovative solutions to meet your needs, take the stress out of your move. 
+                Innovative solutions to meet your needs and take the stress out of your move. 
                 Let us carry the load!</span>
             </li>
             <li class="icon fa-building bg3">
               <h3>Office?</h3>
               <span>Commercial or residentual, 
                 Whether you're moving a little or a lot,
-                our company is ready to provide you with top quality service!</span>
+                we're ready to provide you with top quality service!</span>
             </li>
             <li class="icon fa-wrench bg4">
               <h3>Services</h3>
@@ -76,7 +75,7 @@
                 Additional services are also avalible, including:
                 <br>
                 <br>
-                <ul class="list">
+                <ul class="list" style="text-align: left;">
                   <li>Assembly</li>
                   <li>Dis-Assembly</li>
                   <li>Packaging</li>
@@ -98,7 +97,22 @@
       </section>
     </div>
     <div id="menu">
-
+      <div class="nav-wrapper">
+        <header id="nav-header">
+            <div>
+              <a href="#" class="close-nav">
+                <span>Close</span>
+              </a>
+              </div>
+        </header>
+        <nav class="main-nav">
+          <ul>
+            <li>Home</li>
+            <li>Contact</li>
+            <li>About</li>
+          </ul>
+        </nav>
+        </div>
     </div>
     <script src="menu.js" charset="utf-8"></script>
   </body>
