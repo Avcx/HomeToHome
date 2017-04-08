@@ -58,13 +58,15 @@ buttons
 ul.btn-group {
   padding: 0;
   margin: 0;
-  margin-bottom: 2em;
+  margin-bottom: 1em;
+  margin-top: 2em;
 }
 
-ul.btn-group li {
+ul.btn-group li{
     display: inline-block;
     padding: 0 1.5em 0 0;
     vertical-align: middle;
+    width: 100%;
 }
 
 ul.btn-group li:last-child {
@@ -105,10 +107,6 @@ button.primary:hover,
   background-color: #6eaef2 !important;
 }
 
-#parallax .btn.primary {
-  box-shadow: unset;
-}
-
 /*
 header
 */
@@ -124,6 +122,7 @@ header
   z-index: 1000;
   line-height: 2.5em;
   background-color: #202030;
+  color: #fff;
 }
 
 #main-header h1
@@ -166,20 +165,19 @@ header
 }
 
 #main-header nav a span {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 3.25em;
   margin-right: 0.5em;
   vertical-align: bottom;
 }
 
-#main-header nav a::after
-{
-    background-image: url(img/menu-white.svg);
-    background-position: right center;
-    background-repeat: no-repeat;
-    content: '';
-    display: inline-block;
-    height: 24px;
-    vertical-align: middle;
-    width: 36px;
+.menu-icon {
+  position: absolute;
+  right: 0.5em;
+  top: 50%;
+  transform: translateY(-50%);
 }
 
 /*
@@ -204,12 +202,12 @@ Parallax
 #parallax
 {
   display: flex;
-  background-image: linear-gradient(45deg, lightskyblue, blue, black);
+  background-image: linear-gradient(45deg, lightskyblue, black);
   background-repeat: no-repeat;
   background-origin: center;
   background-size: cover;
   height: 100vh;
-  min-height: 80vh;
+  min-height: 35em;
   padding: 5em 1em 3em 1em;
   justify-content: center;
   flex-direction: column;
@@ -222,7 +220,7 @@ Parallax
 
 #parallax img {
   border-radius: 1em;
-  margin-bottom: 2em;
+  margin-bottom: 1em;
 }
 
 .more {
@@ -282,11 +280,11 @@ wrapper
   margin: 0 auto;
   }
 
-.wrapper .box span,
+/*.wrapper .box span,
 .wrapper .box p,
 .wrapper .box h3 {
     color: rgba(0, 50, 50, 0.8);
-  }
+  }*/
 
 /*
   components
@@ -331,8 +329,10 @@ wrapper
 
 .theme-1
 {
- background-color: #01BAEF;
+ /*background-color: #01BAEF;*/
+ background-color: #0052ae;
  color: #fff;
+ color: rgba(255,255,255, .80);
 }
 
 .theme-2
@@ -399,20 +399,17 @@ color: #fff
   right: 0;
   height: 100vh;
   width: 100%;
-  background-color: rgba(0,0,0,.4);
   z-index: 2000;
-  opacity: 0;
   pointer-events: none;
 }
 
 .open#menu {
-  opacity: 1;
+  background-color: rgba(0,0,0,.4);
 }
 
 #nav-header {
   height: 3em;
   position: relative;
-  background-color: #202030;
   color: #fff;
 }
 
@@ -440,39 +437,34 @@ color: #fff
     height: 24px;
     vertical-align: middle;
     width: 36px;
-    margin-left: 1em;
+    margin: 0 1em;
 }
 
 .open .nav-wrapper {
-  -webkit-transition: transform .25s ease-in-out;
-  -moz-transition: transform .25s ease-in-out;
-  transition: transform .25s ease-in-out;
   transform: translateX(0);
   pointer-events: all;
-  opacity: 1;
 }
 
 .nav-wrapper {
   position: fixed;
   top: 0;
   right: 0;
-  opacity: 1;
   z-index: 3000;
-  transition: transform .25s ease-in-out;
+  transition: transform 0.5s ease-in-out;
   transform: translateX(350px);
   background-color: #4d7de1;
   width: 300px;
   height: 100vh;
 }
 
-@media screen and (min-width: 1000px) {
+@media (min-width: 1000px) {
 
   #parallax
   {
     background-attachment: fixed;
   }
 
-@media screen and (max-width: 1240px) {
+@media (max-width: 1240px) {
   .wrapper {
     padding: 6em 0.5em 4em 0.5em;
   }
@@ -482,7 +474,7 @@ color: #fff
 }
 
 }
-@media screen and (max-width: 980px) {
+@media (max-width: 980px) {
   body {
     font-size: 1.3em;
   }
@@ -491,7 +483,7 @@ color: #fff
   }
 }
 
-@media screen and (max-width: 900px) {
+@media (max-width: 900px) {
 
   .wrapper {
       padding: 2em 1em;
@@ -516,7 +508,7 @@ color: #fff
 
 }
 
-@media screen and (max-width: 768px) {
+@media (max-width: 768px) {
 
   .grid-view>li {
     padding: 3em 2em;
@@ -537,6 +529,42 @@ color: #fff
     padding: 3em 2em 2em 2em;
   }
 }
+
+@media (max-width: 436px) {
+  .wrapper {
+    padding: 1em 0;
+  }
+
+  #parallax {
+    height: 80vh;
+  }
+
+  ul.btn-group li a {
+    display: inline-block;
+    width: 100%;
+  }
+
+  #main-header {
+    height: 2em;
+  }
+
+  #main-header.hide {
+    background-color: rgba(32,32,48, .7);
+  }
+
+  #main-header h1 {
+    display: none;
+    }
+
+}
+
+@media (max-width: 335px) {
+  .grid-view .icon {
+    padding: 3em 0;
+  }
+}
+
+
 
 img {
   height: auto;
