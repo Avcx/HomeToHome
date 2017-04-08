@@ -17,7 +17,7 @@ window.addEventListener('scroll', (event) => {
     } else if (scroll < contentHeight - (headerHeight * 2)) {
         header.classList.add('hide');
     }
-});
+}, {passive: true});
 
 function toggleNav() {
     sideBar.classList.toggle('open');
