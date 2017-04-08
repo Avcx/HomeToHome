@@ -400,6 +400,12 @@ color: #fff
   width: 100%;
   background-color: rgba(0,0,0,.4);
   z-index: 2000;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.open#menu {
+  opacity: 1;
 }
 
 #nav-header {
@@ -436,11 +442,23 @@ color: #fff
     margin-left: 1em;
 }
 
+.open .nav-wrapper {
+  -webkit-transition: transform .25s ease-in-out;
+  -moz-transition: transform .25s ease-in-out;
+  transition: transform .25s ease-in-out;
+  transform: translateX(0);
+  pointer-events: all;
+  opacity: 1;
+}
+
 .nav-wrapper {
   position: fixed;
   top: 0;
   right: 0;
+  opacity: 1;
   z-index: 3000;
+  transition: transform .25s ease-in-out;
+  transform: translateX(350px);
   background-color: #4d7de1;
   width: 300px;
   height: 100vh;
