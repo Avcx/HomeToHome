@@ -30,7 +30,7 @@
         <h1><a href="#">Home to Home Moving Calgary</a></h1>
         <nav>
           <div>
-            <a href="#menu" class="open-nav">
+            <a href="#menu" class="open-nav" tabindex="1">
               <span>Menu</span> <i class="menu-icon fa fa-navicon fa-2x fa-fw"></i>
             </a>
             </div>
@@ -45,10 +45,11 @@
             <li><a href="#" id="call-to-action" class="pop btn primary" role="button">Get a Free Quote!</a></li>
             </ul>
         </div>
-        <a href="#info" class="more">Scroll Down</a>
+        <a href="#info" class="more" tabindex="-1">Scroll Down</a>
       </section>
       <section id="info" class="wrapper theme-1">
         <div class="box">
+          <h2>Why choose us?</h2>
           <ul class="grid-view">
             <li class="icon fa-info-circle bg1">
               <h3>Safety</h3>
@@ -91,7 +92,18 @@
       </section>
             <section id="quote" class="wrapper theme-3">
         <div class="box">
-          <p>Pariatur bitters kogi kinfolk street art next level.  Blue bottle irure  tousled neutra, literally hashtag squid fap tacos.  Mumblecore occupy nihil dolore yr skateboard chillwave tacos deserunt, venmo gentrify chicharrones aesthetic.  Aliqua live-edge cronut meggings, VHS tousled excepteur  jianbing.  Brunch chambray viral stumptown.  Keytar gastropub fashion axe occupy, qui  deserunt  shoreditch authentic placeat neutra ugh.  Ennui organic 3 wolf moon mustache, occupy truffaut hella banjo synth pickled assumenda slow-carb chia chartreuse lyft.</p>
+          <h2>Get your quote</h2>
+          <div class="form-container">
+            <form action="" method="POST" id="quote-form" autocomplete="on">
+              <label for="first-name">Name:</label>
+              <input type="text" name="user_firstname" id="first-name" autocomplete="given-name" placeholder="First">
+              <input type="text" name="user_lastname" id="last-name" autocomplete="family-name" placeholder="Last">
+              <label for="quote-email">Email:</label>
+              <input type="email" name="user_email" id="quote-email" autocomplete="email" placeholder="Email">
+              <label for="quote-tel">Phone:</label>
+              <input type="tel" name="user_tel" id="quote-tel">
+            </form>
+          </div>
         </div>
       </section>
     </div>
@@ -104,7 +116,7 @@
               </a>
               </div>
         </header>
-        <nav class="main-nav">
+        <nav class="main-nav" role="navigation">
           <ul>
             <li><a href="#">Home</a></li>
             <li><a href="#">Contact</a></li>
