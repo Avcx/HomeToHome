@@ -73,6 +73,11 @@ ul.btn-group li:last-child {
     padding-right: 0;
 }
 
+:focus
+{
+  outline: #cc8800 2px solid;
+}
+
 .btn {
       transition: background-color .2s ease-in-out,color .2s ease-in-out;
     background-color: transparent;
@@ -103,7 +108,8 @@ color: #fff !important;
 }
 
 button.primary:hover,
-.btn.primary:hover {
+.btn.primary:hover,
+.btn.primary:focus {
   background-color: #6eaef2 !important;
 }
 
@@ -193,6 +199,42 @@ header hidden
 {
   pointer-events: none;
   opacity: 0;
+}
+
+/*
+Form
+*/
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="password"],
+input[type="date"]
+{
+  font-size: inherit;
+  height: 2em;
+  padding: 5px;
+  border-radius: 5px;
+  border: none;
+  margin-left: 10px;
+  margin-bottom: 1em;
+}
+
+#quote-form
+{
+  display: grid;
+  
+}
+
+#first-name,
+#last-name
+{
+  display: inline-block;
+}
+
+label
+{
+  text-align: right;
 }
 
 /*
@@ -323,6 +365,12 @@ wrapper
     width: 50%;
 }
 
+.box > h2
+{
+  text-align: center;
+  margin-bottom: 2em;
+}
+
 /*
   Color Schemes
 */
@@ -415,7 +463,8 @@ color: #fff
 
 #nav-header a {
     position: absolute;
-    right: 0;
+    right: -15px;
+    top: 0;
     height: 3em;
     color: inherit;
 }
@@ -528,6 +577,30 @@ color: #fff
   .wrapper {
     padding: 3em 2em 2em 2em;
   }
+  label
+  {
+    width: 100%;
+    text-align: left;
+  }
+  input[type="text"],
+  input[type="email"],
+  input[type="tel"],
+  input[type="password"],
+  input[type="date"]
+  {
+    width: 100%;
+    margin-left: 0;
+  }
+
+  #first-name,
+  #last-name
+  {
+    width: 49%;
+  }
+  .box > h2
+{
+  margin-top: 2em;
+}
 }
 
 @media (max-width: 436px) {
@@ -554,8 +627,7 @@ color: #fff
 
   #main-header h1 {
     display: none;
-    }
-
+  }
 }
 
 @media (max-width: 335px) {
